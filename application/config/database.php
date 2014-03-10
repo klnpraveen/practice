@@ -49,11 +49,19 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
+<<<<<<< HEAD
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';
 $db['default']['database'] = 'test';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = 'phppos_';
+=======
+$db['default']['username'] = '';
+$db['default']['password'] = '';
+$db['default']['database'] = '';
+$db['default']['dbdriver'] = 'mysql';
+$db['default']['dbprefix'] = '';
+>>>>>>> ee9d0405bf2b76c5be34b5fabebe805d172ae6df
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
 $db['default']['cache_on'] = FALSE;

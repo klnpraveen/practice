@@ -49,6 +49,9 @@
 	}
 	code a#l{
 		color: blue;
+
+	code a{
+		color: red;
 	}
 	#body{
 		margin: 0 15px 0 15px;
@@ -81,8 +84,12 @@
 		color: #2c3e50;
 		width: 200px;
 		height: 30px;
+
 		border: #80bee8 2px solid;
 		border-radius: 1.5px;
+
+		border: #80bee8 5px solid;
+
 	}
 	.uname:hover
 	{
@@ -91,8 +98,12 @@
 		color: #2c3e50;
 		width: 200px;
 		height: 30px;
+
 		border: #3498db 2px solid;
 		border-radius: 1.5px;
+
+		border: #3498db 5px solid;
+
 	}
 	.pswd
 	{
@@ -101,8 +112,12 @@
 		color: #2c3e50;
 		width: 200px;
 		height: 30px;
+
 		border: #80bee8 2px solid;
 		border-radius: 1.5px;
+
+		border: #80bee8 5px solid;
+
 	}
 	.pswd:hover
 	{
@@ -111,8 +126,12 @@
 		color: #2c3e50;
 		width: 200px;
 		height: 30px;
+
 		border: #3498db 2px solid;
 		border-radius: 1.5px;
+
+		border: #3498db 5px solid;
+
 	}
 	.loginbtn
 	{
@@ -139,11 +158,16 @@
 	}
 	.logo
 	{
+
 		border: #3498db 2px solid;
+
+		border: #3498db 5px solid;
+
 	}
 	</style>
 </head>
 <body>
+
 <div align=right>
 			<?php
 				$image_properties = array(
@@ -160,6 +184,9 @@
 
 			?>
 		</div>
+
+
+
 <div id="container">
 		<p class="header">If you are exploring CodeIgniter for the very first time, you should start by reading the <?php echo anchor('../user_guide/','User Guide',array('target' => '_blank')); ?> </p>
 
@@ -168,7 +195,10 @@
 	<div id="body">
 		
 		<h3>Login Form :</h3>
+
 		
+
+
 		<code>
 			<?php
 
@@ -180,7 +210,11 @@
               		'maxlength'   => '30',
               		'size'        => '',
               		'class'		  => 'uname',
+
               		'autocomplete'=> 'off',
+
+              
+
             	);
             	$pdata = array(
               		'name'        => 'password',
@@ -190,7 +224,11 @@
               		'maxlength'   => '30',
               		'size'        => '',
               		'class'		  => 'pswd',
+
               		'autocomplete'=> 'off',
+
+              
+
             	);
             	$loginbtn = array(
               		'name'        => 'submit',
@@ -200,6 +238,7 @@
               		'class'		  => 'loginbtn'
             	); 
 				echo form_label('UserName :','ulbl').form_input($udata).br(2);
+
 				echo form_label('PassWord :','pswd').form_input($pdata).nbs(2).br(2).nbs(12).form_submit($loginbtn).br(2);
 				echo nbs('12').anchor('/items','forgot password?','style=color:red').nbs('6').anchor('#','Click Here To Register!','alt=not a member yet');
 				echo form_close();
@@ -240,6 +279,14 @@
 				echo $this->table->generate();	
 			?>
 		</code>
+
+				echo form_label('PassWord :','pswd').form_input($pdata).nbs(2).form_submit($loginbtn).br(1);
+				echo nbs('12').anchor('#','forgot password?');
+				echo form_close();
+			 ?>
+		</code>
+
+
 		<div align=center>
 			<?php
 				$image_properties = array(
@@ -250,6 +297,7 @@
           'height' => '',
           'title' => 'BootStrap Guru',
           'rel' => 'lightbox',
+
 			);
 
 			echo img($image_properties);
@@ -264,5 +312,17 @@
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 </div>
 	
+
+);
+
+echo img($image_properties);
+			?>
+		</div>
+	</div>
+
+	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
+</div>
+
+
 </body>
 </html>
