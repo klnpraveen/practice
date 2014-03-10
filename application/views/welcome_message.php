@@ -81,7 +81,8 @@
 		color: #2c3e50;
 		width: 200px;
 		height: 30px;
-		border: #80bee8 5px solid;
+		border: #80bee8 2px solid;
+		border-radius: 1.5px;
 	}
 	.uname:hover
 	{
@@ -90,7 +91,8 @@
 		color: #2c3e50;
 		width: 200px;
 		height: 30px;
-		border: #3498db 5px solid;
+		border: #3498db 2px solid;
+		border-radius: 1.5px;
 	}
 	.pswd
 	{
@@ -99,7 +101,8 @@
 		color: #2c3e50;
 		width: 200px;
 		height: 30px;
-		border: #80bee8 5px solid;
+		border: #80bee8 2px solid;
+		border-radius: 1.5px;
 	}
 	.pswd:hover
 	{
@@ -108,7 +111,8 @@
 		color: #2c3e50;
 		width: 200px;
 		height: 30px;
-		border: #3498db 5px solid;
+		border: #3498db 2px solid;
+		border-radius: 1.5px;
 	}
 	.loginbtn
 	{
@@ -135,11 +139,11 @@
 	}
 	.logo
 	{
-		border: #3498db 5px solid;
+		border: #3498db 2px solid;
 	}
 	</style>
 </head>
-<body><?php include 'myWork/interface/header.php'; ?>
+<body>
 <div align=right>
 			<?php
 				$image_properties = array(
@@ -164,13 +168,7 @@
 	<div id="body">
 		
 		<h3>Login Form :</h3>
-		<code>
-			<?php 
-				$s = form_label('UserName :','ualbl');
-				$this->table->add_row($s);
-				echo $this->table->generate();	
-			?>
-		</code>
+		
 		<code>
 			<?php
 
@@ -202,12 +200,46 @@
               		'class'		  => 'loginbtn'
             	); 
 				echo form_label('UserName :','ulbl').form_input($udata).br(2);
-				echo form_label('PassWord :','pswd').form_input($pdata).nbs(2).form_submit($loginbtn).br(1);
-				echo nbs('12').anchor('#','forgot password?','style=color:red').nbs('6').anchor('#','Click Here To Register!','alt=not a member yet');
+				echo form_label('PassWord :','pswd').form_input($pdata).nbs(2).br(2).nbs(12).form_submit($loginbtn).br(2);
+				echo nbs('12').anchor('/items','forgot password?','style=color:red').nbs('6').anchor('#','Click Here To Register!','alt=not a member yet');
 				echo form_close();
 			 ?>
 		</code>
+		<code style="display:none;">
+			<?php
 
+
+				$tmpl = array (
+                    'table_open'          => '<table border="1" cellpadding="4" cellspacing="0">',
+
+                    'heading_row_start'   => '<tr>',
+                    'heading_row_end'     => '</tr>',
+                    'heading_cell_start'  => '<th>',
+                    'heading_cell_end'    => '</th>',
+
+                    'row_start'           => '<tr>',
+                    'row_end'             => '</tr>',
+                    'cell_start'          => '<td>',
+                    'cell_end'            => '</td>',
+
+                    'row_alt_start'       => '<tr>',
+                    'row_alt_end'         => '</tr>',
+                    'cell_alt_start'      => '<td>',
+                    'cell_alt_end'        => '</td>',
+
+                    'table_close'         => '</table>'
+              );
+
+				$this->table->set_template($tmpl); 
+				$s = form_label('UserName :','ualbl');
+				$this->table->add_row($s,form_input($udata));
+				$this->table->add_row(form_label('Password :','pswd'),form_input($pdata));
+				echo $this->table->generate();
+
+				$this->table->add_row('hi');
+				echo $this->table->generate();	
+			?>
+		</code>
 		<div align=center>
 			<?php
 				$image_properties = array(
